@@ -1,0 +1,138 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: linear-gradient(180deg, #fde2b4, #fdcc7d);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* ===================
+   TESTI
+=================== */
+h1, h2, h3 {
+    font-weight: 700;
+    color: #222;
+    letter-spacing: -0.5px;
+}
+
+.hero-title {
+    text-shadow: 0px 1px 3px rgba(0,0,0,0.15);
+}
+
+/* ===================
+   NAVBAR
+=================== */
+.navbar {
+    box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+    padding: 0.75rem 1rem;
+    background-color: #fff;
+}
+
+.navbar .nav-link:hover {
+    text-decoration: none;
+    opacity: 0.8;
+    transition: opacity 0.2s ease;
+}
+
+/* ===================
+   HERO IMAGES
+=================== */
+.hero-images img {
+    max-height: 260px;
+    transition: transform 0.2s;
+}
+
+.hero-images img:hover {
+    transform: scale(1.05);
+}
+
+/* ===================
+   CARDS
+=================== */
+.card {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+    border-radius: 14px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    border: none;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.18);
+}
+
+.clienti-card {
+    background: #fff;
+}
+
+
+/* ===================
+   BUTTONS
+=================== */
+.btn {
+    padding: 0.55rem 1.2rem;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+/* ===================
+   TABLE
+=================== */
+.table thead th {
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #333;
+    font-size: 0.85rem;
+    border-bottom-width: 2px;
+}
+
+.clienti-table tbody td {
+    vertical-align: middle;
+}
+
+/* ===================
+   FOOTER
+=================== */
+footer {
+    margin-top: auto;
+    padding: 1rem 0;
+    text-align: center;
+    background: #fff;
+    box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
+}
+
+
+
+/* ===================
+   MEDIA QUERY
+=================== */
+@media (max-width: 992px) {
+    .table-responsive {
+        overflow-x: auto;
+    }
+}
+
+
+
+/* elementi hamburgher menu a destra*/
+.item_right {
+
+    margin-left: auto;
+}
+
+
+
+/*classe elemento navbar active per evidenza pagina*/
+
+.nav-link.active {
+
+    color: yellow;
+    
+
+}

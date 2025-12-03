@@ -1,0 +1,108 @@
+----CREIAMO DB :
+
+CREATE DATABASE IF NOT EXISTS tripagency;
+
+
+
+
+----PER USARLO :
+
+USE tripagency
+
+
+
+
+
+---------------------------------------------------CREO TABELLE---------------------------------------
+
+
+
+CREATE TABLE clienti (
+
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(30) NOT NULL,
+    cognome VARCHAR(30) NOT NULL,
+    email VARCHAR(30) NOT NULL,
+    telefono VARCHAR(30) NOT NULL,
+    nazione VARCHAR(30) NOT NULL,
+    codice_fiscale VARCHAR(16) NOT NULL,     
+    documento VARCHAR(255)
+);
+
+
+CREATE TABLE destinazioni (
+
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    citta VARCHAR(30) NOT NULL,
+    paese VARCHAR(30) NOT NULL,
+    prezzo DECIMAL(10,2) NOT NULL,             
+    data_partenza DATE NOT NULL,
+    data_ritorno DATE NOT NULL,
+    posti_disponibili INT NOT NULL
+);
+
+
+
+CREATE TABLE prenotazioni (
+
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    id_cliente INT NOT NULL,
+    id_destinazione INT NOT NULL,
+
+    data_prenotazione DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    acconto DECIMAL(10,2),
+    numero_persone INT NOT NULL,
+    assicurazione BOOLEAN,
+
+    CONSTRAINT fk_cliente FOREIGN KEY (id_cliente) -> Questo vincolo impedisce l inserimento di una prenotazione con una destinazione che non esiste
+    REFERENCES clienti(id)                         -> referenza con l ID della tabella clienti 
+    ON DELETE CASCADE,                             -> Cancella automaticamente le prenotzioni se la destinazione viene eliminata
+
+
+    CONSTRAINT fk_destinazione FOREIGN KEY (id_destinazione) 
+    REFERENCES destinazioni(id)
+    ON DELETE CASCADE
+);
+
+
+
+
+*** i CLIENTI e le DESTINAZIONI SONO ENTITà INDIPENDENTI
+
+    LE PRENOTAZIONI DIPENDONO DA ENTRAMBE TRAMITE CHIAVI ESTERNE (FK)foreign KEY
+
+    i vincoli ON DELETE CASCADE fanno si che , eliminando una cliente o una destinazione,
+                                            vengano cancellate automaticamente anche le prenotazioni collegate
+
+
+
+
+
+* nel bind_param, esiste la tipizzazione  esempio  : "sssssss"
+
+    ogni lettera corrisponde ad un tipo di dato : 
+
+        s -> stringa
+        i -> intero
+        d -> DECIMAL
+        b -> BLOB
+
+le date sono stringhe s
+
+
+
+
+
+    //evoluzione progetto 
+
+    * è meglio cancellare il campo numero_persone poichè ogni persona registrata prenota per sè stessa, e l assicurazione è personale.
+
+    * data_prenotazione DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP, è stato deciso affinchè una prenotazione prenda l ora e la data di inserimento in modo automatico
+
+        * posti_disponibili ??
+
+        * aggiungere flag al cliente se ha prenotazioni
+
+        * features da implementare sul nome del file caricato
+                
+                "nome_fil.....PNG" Nella colonna DOCUMENTO
