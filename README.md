@@ -54,7 +54,7 @@ Backend
 
 - PHP 8
 
-- MySQL / MariaDB
+- MySQL 
 
 ### Frontend
 
