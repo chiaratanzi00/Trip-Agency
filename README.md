@@ -10,29 +10,21 @@ Applicazione web sviluppata in **PHP**, **MySQL** e **Bootstrap 5** per la gesti
 
 ## Descrizione del progetto
 
-Trip-Agency è una web app pensata per semplificare la gestione di un’agenzia di viaggi. Permette di:
+Trip-Agency è pensata come:
 
-### Gestire i Clienti
-- Aggiunta e modifica clienti  
-- Eliminazione clienti  
-- Visualizzazione dati anagrafici
+- un gestionale interno per un’agenzia di viaggi virtuale  
+- uno strumento per mostrare le tue competenze full-stack: backend (PHP + MySQL), interfaccia web, logica CRUD, relazioni database, validazioni  
 
-### Gestire le Destinazioni
-- Inserimento nuove destinazioni
-- Modifica ed eliminazione mete
-- Visualizzazione catalogo completo
+Con questa app puoi:
 
-### Gestire le Prenotazioni
-- Associare clienti e destinazioni
-- Registrare nuove prenotazioni
-- Visualizzare e modificare prenotazioni
-- Eliminazione prenotazioni
-- Relazioni tramite chiavi esterne in MySQL
+- Creare nuovi pacchetti viaggio (destinazione, data/periodo, prezzo, descrizione, disponibilità)  
+- Visualizzare la lista di pacchetti disponibili  
+- Modificare o eliminare pacchetti esistenti  
+- Permettere ai clienti di prenotare viaggi (con i loro dati: nome, contatti, selezione pacchetto)  
+- Visualizzare e gestire le prenotazioni: lista prenotazioni, modifica, cancellazione  
+- Eventualmente filtrare o cercare pacchetti/prenotazioni  
 
-### Interfaccia
-- Layout responsive realizzato con **Bootstrap 5**
-- Navigazione semplice e intuitiva
-
+L’obiettivo è offrire un gestionale semplice ma completo, con logica di database relazionale, interfaccia user-friendly e processi CRUD + prenotazioni.
 
 ---
 
@@ -70,7 +62,10 @@ Trip-Agency è una web app pensata per semplificare la gestione di un’agenzia 
 ---
 
 
-## Autrice Chiara Tanzi 
+## 👩‍💻 Autrice 
+
+**Chiara Tanzi**
+
 
 
 
